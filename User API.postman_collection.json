@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "34a21272-7f9a-4306-987c-73a342aba7c7",
+		"name": "User API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22365313"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://arch.homework/health",
+					"protocol": "https",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://arch.homework/health",
+							"protocol": "https",
+							"host": [
+								"arch",
+								"homework"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 26 Jul 2022 12:47:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15724800; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\": \"ok\"}"
+				}
+			]
+		}
+	]
+}
