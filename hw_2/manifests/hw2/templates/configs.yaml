@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hw2-secret
+  namespace: {{ .Values.hw_namespace }}
+type: Opaque
+data:
+#  DB_DSN: {{ printf "postgresql://%s:%s@%s:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword .Values.postgresql.fullnameOverride .Values.postgresql.servicePort .Values.postgresql.postgresqlDatabase  | b64enc | quote }}
+  DB_DSN: {{ printf "postgresql://%s:%s@postgres.default.svc.cluster.local:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword  .Values.postgresql.servicePort .Values.postgresql.postgresqlDatabase  | b64enc | quote }}

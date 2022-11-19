@@ -1,0 +1,55 @@
+# Default values for hw2.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+hw_namespace: hw2
+
+replicaCount: 2
+
+image:
+  repository: kracozebr/hw2
+  pullPolicy: Always
+  tag: v1
+
+#  job:
+#    ## Should the job be rescheduled on the same node if it fails, or just stopped
+#    restartPolicy: Never
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+autoscaling:
+  enabled: false
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {
+    nginx.ingress.kubernetes.io/rewrite.target: /
+  }
+  hosts:
+    - host: arch.homework
+      paths:
+        - path: /
+          pathType: Prefix
+
+postgresql:
+  postgresqlUsername: postgres
+  postgresqlPassword: password
+  postgresqlDatabase: postgres
+  fullnameOverride: postgres
+  servicePort: "5432"
